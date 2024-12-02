@@ -59,7 +59,7 @@ const Project = () => {
         icon: <FaUserCircle size={40} />,
         title: "Digital Portfolio",
         description: "Showcase of professional and personal projects.",
-        githubLink: "https://github.com/Mohammed-Bakhshi/Digital-Portfolio",
+        githubLink: "https://github.com/Mohammed-Bakhshi/Digital-Portfolio/tree/master",
       },
       {
         id: 4,
