@@ -1,0 +1,146 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.residentsclub-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1A202C, #2D3748);
+    min-height: 100vh;
+    padding: 40px;
+    color: #FFFFFF;
+}
+
+/* Image container styles */
+.residentsclub-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 600px;
+    max-width: 40%;
+    border: 5px solid #00ffb37a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.residentsclub-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.residentsclub-image:hover {
+    transform: scale(1.05);
+}
+
+/* Arrow styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(32, 32, 32, 0);
+    color: #00D9A1;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.arrow-left {
+    left: 15px;
+}
+
+.arrow-right {
+    right: 15px;
+}
+
+.arrow:hover {
+    background: rgba(51, 51, 51, 0.192);
+    transform: scale(1.2);
+}
+
+/* Content styles */
+.residentsclub-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.residentsclub-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00D9A1;
+    margin-bottom: 20px;
+}
+
+.residentsclub-description,
+.residentsclub-summary,
+.residentsclub-role-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #E2E8F0;
+}
+
+.residentsclub-bullet-points {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.residentsclub-bullet-points li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.residentsclub-bullet-points li::before {
+    content: "✔";
+    color: #00D9A1;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .residentsclub-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .residentsclub-image-container,
+    .residentsclub-content {
+        max-width: 100%;
+    }
+
+    .residentsclub-title {
+        font-size: 2.5rem;
+    }
+
+    .residentsclub-description,
+    .residentsclub-summary,
+    .residentsclub-role-description,
+    .residentsclub-bullet-points li {
+        font-size: 1rem;
+    }
+}

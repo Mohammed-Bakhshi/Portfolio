@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30a02785.css",
+    "main.js": "/static/js/main.d2a11049.js",
+    "static/js/568.f6299ff5.chunk.js": "/static/js/568.f6299ff5.chunk.js",
+    "static/media/Untitled.png": "/static/media/Untitled.fd5b859c4c74c7a5e7de.png",
+    "static/media/Mo's Games logo.png": "/static/media/Mo's Games logo.0a2dc90970de039ccc76.png",
+    "static/media/Mohammed_github.png": "/static/media/Mohammed_github.6b98e110ecad8118137d.png",
+    "static/media/React.png": "/static/media/React.8a6fc0a24a800d1e0f4a.png",
+    "static/media/python.png": "/static/media/python.82efb64f8698a267f8bf.png",
+    "static/media/Selenium.png": "/static/media/Selenium.8acd00a91ebc15e2633e.png",
+    "static/media/Renuem.png": "/static/media/Renuem.f710d6e9b3b7a0d2c097.png",
+    "static/media/kotlin.png": "/static/media/kotlin.d74cebb74ac65be21f0f.png",
+    "static/media/sql-logo.png": "/static/media/sql-logo.26e07c0c18c63ac6bba3.png",
+    "static/media/instagram.png": "/static/media/instagram.81e2e2c95e0e6728b4d7.png",
+    "static/media/node.png": "/static/media/node.e328955d6bbbf3ebc72b.png",
+    "static/media/theresidentsclub.png": "/static/media/theresidentsclub.01cdff04ef47671e8b8e.png",
+    "static/media/javascript.png": "/static/media/javascript.53a72c2f1b8894adc207.png",
+    "static/media/github.png": "/static/media/github.63a8c65d4b55a4d9ff5b.png",
+    "index.html": "/index.html",
+    "main.30a02785.css.map": "/static/css/main.30a02785.css.map",
+    "main.d2a11049.js.map": "/static/js/main.d2a11049.js.map",
+    "568.f6299ff5.chunk.js.map": "/static/js/568.f6299ff5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30a02785.css",
+    "static/js/main.d2a11049.js"
+  ]
+}
