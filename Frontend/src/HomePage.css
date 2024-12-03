@@ -1,0 +1,138 @@
+/* Draw Box Animation */
+@keyframes drawBox {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.draw-panel {
+  transform-origin: left;
+  animation-delay: 0.5s;
+}
+
+/* Base button style */
+.button-style {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #1F6FEB, #58A6FF); /* Original gradient */
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease, background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover effect */
+.button-style:hover {
+  transform: scale(1.1); /* Slightly enlarge the button */
+  background: linear-gradient(90deg, #1553b1, #174e8d);
+  box-shadow: 0px 4px 10px rgb(97, 147, 255);
+}
+
+/* Hacker line animations */
+.hacker-line,
+.scrolling-text {
+  animation: pulseLine 2s infinite;
+  background: linear-gradient(180deg, #58A6FF, transparent);
+  position: absolute;
+  width: 5px;
+}
+
+/* Enhanced Footer Styles */
+.footer {
+  text-align: center;
+  color: #C9D1D9;
+  margin-top: 50px;
+  font-size: 14px;
+  position: relative;
+}
+
+.footer .footer-text {
+  color: #adadad;
+  font-weight: bold;
+}
+
+/* Update tech-info to display in a row with even spacing */
+.footer .tech-info {
+  display: flex;
+  justify-content: space-evenly; /* Space items evenly */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer .tech-info span {
+  display: inline-block;
+  font-size: 14px;
+  color: #adadad;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.footer .tech-info span:hover {
+  color: #adadad;
+  transform: scale(1.1);
+}
+
+/* Footer adjustments for mobile */
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-top: 30px; /* Reduce margin */
+    font-size: 12px; /* Smaller text */
+  }
+
+  .footer .footer-text {
+    font-size: 12px; /* Adjust footer text size */
+  }
+
+  .footer .tech-info {
+    justify-content: space-evenly;
+    flex-direction: row; /* Stack items in a column */
+    gap: 10px; /* Add space between items */
+    margin-bottom: 15px; /* Reduce margin */
+  }
+
+  .footer .tech-info span {
+    font-size: 12px; /* Smaller text */
+  }
+}
+
+/* Hacker line adjustments for mobile */
+@media screen and (max-width: 768px) {
+  .hacker-line,
+  .scrolling-text {
+    width: 3px; /* Narrower line */
+    animation: pulseLine 2s infinite;
+    background: linear-gradient(180deg, #58A6FF, transparent);
+  }
+
+  .draw-panel {
+    font-size: 15px; /* Smaller text size */
+    animation-delay: 0.5s;
+    margin: 5px; /* Reduce spacing */
+  }
+}
+
+/* General adjustments for smaller elements */
+@media screen and (max-width: 768px) {
+  .button-style {
+    padding: 10px 20px; /* Reduce padding */
+    font-size: 12px; /* Smaller text */
+  }
+
+  .button-style:hover {
+    transform: scale(1.05); /* Less enlargement on hover */
+  }
+}
