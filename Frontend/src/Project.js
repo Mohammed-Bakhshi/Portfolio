@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Project.css"; // Updated styles here
 import {
-  FaSolarPanel,
-  FaClinicMedical,
   FaMusic,
-  FaGamepad,
-  FaFileSignature,
   FaUserCircle,
-  FaHeadphones, // Alternative icon for Clear Ear
   FaFileExcel, // Excel-related icon for the dashboa
 } from "react-icons/fa";
 
@@ -44,15 +39,8 @@ const Project = () => {
         id: 1,
         icon: <FaMusic size={40} />,
         title: "Billboard Data Analysis",
-        description: "Analyze decades of Billboard Hot 100 music trends.",
+        description: "Analyse decades of Billboard Hot 100 music trends.",
         githubLink: "https://github.com/Mohammed-Bakhshi/web-scraping-Billboard-hot-100",
-      },
-      {
-        id: 2,
-        icon: <FaHeadphones size={40} />, // Updated icon
-        title: "Clear Ear",
-        description: "Track customer details and appointments in ear clinics.",
-        githubLink: "https://github.com/Mohammed-Bakhshi/Clear-ear-/tree/main",
       },
       {
         id: 3,
@@ -65,14 +53,14 @@ const Project = () => {
         id: 4,
         icon: <FaFileExcel size={40} />, // Updated icon
         title: "Excel Smart Dashboard",
-        description: "Interactive Excel dashboards for data visualization.",
+        description: "Interactive Excel dashboards for data visualisation.",
         githubLink: "https://github.com/Mohammed-Bakhshi/Excel-dashboard",
       },
   ];
 
   return (
     <div className={`project-container ${visibleSection ? 'fade-up' : ''}`} ref={projectContainerRef}>
-      <h1 className="projects-header">My Projects</h1>
+      <h1 className="projects-header">Additional Projects</h1>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">

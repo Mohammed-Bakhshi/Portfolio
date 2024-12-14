@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Aboutme.css';
 
 // Import images for the section
-import Mohammed from './image/Mohammed.PNG';
+import Mohammed from './image/Mohammed.png';
 import MosGames from './image/Mo\'s Games logo.png';
 import Nodejs from './image/node.png';
 import clearear from './image/Clearear.jpg';
@@ -49,7 +49,7 @@ const MainContent = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.3 }
     );
 
     const fadeUpSection = mainContentRef.current;
@@ -85,24 +85,20 @@ const MainContent = () => {
       description: (
         <>
           <p>Renewable energy investment platform.</p>
-          <ul>
-            <li>
               Developed a renewable energy investment app using React Native
               (Expo) and Node.js with Express.js, enabling individuals to invest
               in wind farms and solar panels through a scalable and secure
               platform.
-            </li>
-            <br />
-            <li>
+            
+            <br></br><br></br>
+            
               Deployed the backend on AWS, integrating MySQL RDS for efficient
               data management and real-time investment tracking.
-            </li>
-            <br />
-            <li>
+            
+              <br></br><br></br>
+            
               Collaborated with stakeholders to align the app with business
               goals, driving user engagement and satisfaction.
-            </li>
-          </ul>
         </>
       ),
     },
@@ -113,23 +109,16 @@ const MainContent = () => {
       description: (
         <>
           <p>Hearing clinic appointment management app.</p>
-          <ul>
-            <li>
+          
               Designed and developed an Android app using React Native to manage
               patient appointments and streamline operations for a hearing
               clinic.
-            </li>
-            <br />
-            <li>
+              <br></br><br></br>
               Integrated a local database with AsyncStorage to store and track
               customer details and appointment history.
-            </li>
-            <br />
-            <li>
+              <br></br><br></br>
               Worked closely with clinic staff to gather requirements and ensure
               the app met operational needs and improved workflow efficiency.
-            </li>
-          </ul>
         </>
       ),
     },
@@ -140,28 +129,18 @@ const MainContent = () => {
       description: (
         <>
           <p>Gamimg lounge</p>
-          <ul>
-            <li>
-              Conducted data analysis for the launch of bubble tea in Pakistan,
+              Conducted data analysis for the launch of bubble tea,
               identifying key demographics and customer segments for targeted
               marketing.
-            </li>
-            <br />
-            <li>
+              <br></br><br></br>
               Analyzed market trends to assess the possibility of expanding into
               new locations for bubble tea and nitrogen ice cream shops.
-            </li>
-            <br />
-            <li>
+              <br></br><br></br>
               Developed and maintained the Mo’s Games website using HTML, CSS,
               and JavaScript, improving customer engagement and online presence.
-            </li>
-            <br />
-            <li>
+              <br></br><br></br>
               Utilized data insights to optimize marketing strategies, driving
               successful product launches and business growth.
-            </li>
-          </ul>
         </>
       ),
     },
@@ -170,27 +149,29 @@ const MainContent = () => {
   return (
     <div className="main" ref={mainContentRef}>
       <div className={`bg ${isMobileView ? '' : 'wide'}`}>
-        <div className={`hero-section ${isMobileView ? '' : 'row'}`}>
+        <div
+          className={`hero-section ${
+            visibleSections[mainContentRef.current?.id] ? 'fade-up' : ''
+          } ${isMobileView ? '' : 'row'}`}
+        >
           <div style={{ textAlign: 'center' }}>
             <img src={Mohammed} alt="Mohammed Bakhshi" />
             <div className="image-caption">
-              Mohammed Bakhshi - Full Stack Developer
+              Mohammed Bakhshi - Full Stack Developer 🇬🇧
             </div>
           </div>
           {!isMobileView && <div className="divider"></div>}
-          <div className={`paragraph ${visibleSections[mainContentRef.current?.id] ? 'fade-up' : ''}`}>
-          <p>
-              With over 7 years of experience as a Full Stack Developer and Data
-              Analyst, I’ve built my career around designing efficient,
+          <div className="paragraph">
+            <p>
+              With 4 years of experience as a Full Stack Developer and Data
+              Analyst born and raised in the uk , I’ve built my career around designing efficient,
               user-focused solutions that bridge technical innovation with
               real-world impact.
             </p>
             <p>
               I’ve also been fortunate to combine my technical skills with
               entrepreneurial insight. For instance, I played a key role in
-              launching innovative ventures, such as introducing fruit bubble
-              tea to the Pakistani market while managing a dynamic gaming lounge
-              in Lahore.
+              launching innovative ventures, such as bringing the first bubble tea gaming lounge to the market.
             </p>
             <p>
               Outside of work, I’m always exploring the latest in technology,
@@ -198,13 +179,11 @@ const MainContent = () => {
               photography, and solving puzzles.
             </p>
             <p>
-              If you’re interested in learning more about my projects or
-              discussing collaboration opportunities, feel free to explore
-              further.
+              I am looking for my next opportunity, please get in touch if you need a passionate and versatile developer
             </p>
           </div>
         </div>
-
+  
         <h3 className="section-header">Tech Languages</h3>
         <div className="logo-container">
           {techLanguages.map(({ id, src, name }) => (
@@ -221,7 +200,7 @@ const MainContent = () => {
             </div>
           ))}
         </div>
-
+  
         <div className="work-history-section">
           <h3 className="section-header">Work History</h3>
           <div className="work-cards-container">
@@ -241,3 +220,5 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+

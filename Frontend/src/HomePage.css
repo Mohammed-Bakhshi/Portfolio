@@ -136,6 +136,7 @@
 @media screen and (max-width: 768px) {
   .button-style {
     font-size: 15px; /* Smaller text */
+    padding: 15px;
   }
 
   .button-style:hover {

@@ -105,9 +105,9 @@ const HomePage = () => {
   return (
     <div style={commonStyle}>
       <div style={headerContainerStyle}>
-        <h1 style={headerStyle}>Hi, I'm Mohammed 👋</h1>
+        <h1 style={headerStyle}>Hi, My name is Mohammed 👋</h1>
         <p style={subHeaderStyle}>
-          With 7 years in tech, I bring passion and expertise to crafting user-friendly applications and solving complex problems. I thrive on challenges, whether in Leetcode, developing new skills, or competitive gaming.
+          With 4 years in tech, I bring passion and expertise to crafting user-friendly applications and solving complex problems. I thrive on challenges, whether in Leetcode, developing new skills, or competitive gaming.
         </p>
         <div style={buttonContainerStyle}>
           <ScrollLink to="about-section" smooth={true} duration={500} className="button-style">

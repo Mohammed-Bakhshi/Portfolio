@@ -51,10 +51,25 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* General styles */
 .project-icon {
   color: #00adb5;
   margin-bottom: 10px;
   animation: bounce 1.5s infinite alternate;
+}
+
+/* Apply margin-right only for mobile view */
+@media screen and (max-width: 768px) {
+  .project-icon {
+    margin-right: 5px; /* Margin-right for mobile view */
+  }
+}
+
+/* Remove margin-right for larger screens */
+@media screen and (min-width: 769px) {
+  .project-icon {
+    margin-right: 0; /* No margin-right for PC view */
+  }
 }
 
 .project-title {
@@ -64,7 +79,7 @@ body {
 
 .project-description {
   font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 55px;
 }
 
 .project-link {

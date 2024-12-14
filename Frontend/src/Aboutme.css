@@ -46,7 +46,7 @@ body {
 /* Class to apply fade-up animation */
 .fade-up {
   opacity: 0;
-  animation: fadeUp 2s ease-out forwards; /* Animation duration and easing */
+  animation: fadeUp 3s ease-out forwards; /* Animation duration and easing */
 }
 
 /* Hero Section Styling */
@@ -237,6 +237,8 @@ body {
 .work-history-section {
   margin-top: 4rem;
   text-align: center; /* Center the content */
+  margin-bottom: 4rem;
+  
 }
 
 .work-history-section .section-header {
@@ -256,7 +258,7 @@ body {
   position: relative;
   width: 300px;
   max-height: 200px; /* Initial height */
-  border: 1px solid #ccc;
+  /*border: 0.1px solid #ccc*/
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -268,14 +270,6 @@ body {
   transform: scale(1.0); /* Optional scaling effect */
 }
 
-.card-description {
-  padding: 16px;
-  color: white;
-  line-height: 1.8;
-  opacity: 0;
-  transform: translateY(10%);
-  transition: opacity 1s ease, transform 1s ease; /* Smooth fade-in and slide */
-}
 
 .work-card:hover .card-description {
   opacity: 1;
@@ -296,19 +290,32 @@ body {
   margin-right: 16px;
 }
 
-.company-name {
-  font-size: 18px;
-  font-weight: bold;
-}
-
+/* Card Description - Default for Larger Screens (Translate X) */
 .card-description {
   padding: 16px;
   color: white;
   line-height: 1.8;
   opacity: 0;
-  transform: translateY(-100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.4s ease;
 }
+
+.work-card:hover .card-description {
+  opacity: 1;
+  transform: translateX(0); /* Moves into place horizontally */
+}
+
+/* Card Description - Override for Smaller Screens (Translate Y) */
+@media (max-width: 768px) {
+  .card-description {
+    transform: translateY(100%); /* Start from below for mobile */
+  }
+
+  .work-card:hover .card-description {
+    transform: translateY(0); /* Moves into place vertically */
+  }
+}
+
 
 .work-card:hover .card-description {
   opacity: 1;
@@ -332,12 +339,6 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.company-name {
-  text-align: center;
-  font-style: italic;
-  margin-top: 1rem;
-  color: #aaa; /* Subtle text color */
-}
 
 .card-content {
   display: block; /* Hide card content as we don't want it visible */
@@ -360,7 +361,6 @@ body {
 
 .company-name {
   text-align: center;      /* Center the text */
-  font-style: italic;      /* Make the text italic */
   margin-top: 1rem;        /* Add some space above the text */
   color: #aaa;             /* Set the subtle gray color */
   font-size: 24px;         /* Adjust the font size */
