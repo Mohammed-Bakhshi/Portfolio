@@ -1,0 +1,12 @@
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, #1f6feb, #58a6ff);
+}

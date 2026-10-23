@@ -1,0 +1,72 @@
+.skill-row {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.skill-panel {
+  position: relative;
+  padding: 50px;
+  border-radius: 12px;
+  color: #c9d1d9;
+  background-color: #21262d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform-origin: left;
+  animation: drawBox 1s ease-in-out;
+  animation-delay: 0.5s;
+}
+
+.skill-panel ul {
+  line-height: 1.8;
+  text-align: left;
+}
+
+.page[data-theme="light"] .skill-panel {
+  color: #1f2328;
+  background: #ffffff;
+}
+
+.hacker-line,
+.scrolling-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #58a6ff, transparent);
+  animation: pulseLine 2s infinite;
+}
+
+.hacker-line {
+  left: -15px;
+}
+
+.scrolling-text {
+  right: -15px;
+  background: linear-gradient(180deg, transparent, #58a6ff);
+  animation: scrollingText 5s linear infinite;
+}
+
+@keyframes drawBox {
+  0% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 0.5; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes pulseLine {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+@keyframes scrollingText {
+  0% { transform: translateY(-30%); }
+  100% { transform: translateY(30%); }
+}
+
+@media (max-width: 768px) {
+  .skill-panel {
+    display: none;
+  }
+}

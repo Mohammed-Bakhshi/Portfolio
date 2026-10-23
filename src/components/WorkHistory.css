@@ -1,0 +1,82 @@
+.work-history {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.work-history h3 {
+  margin-bottom: 1.5rem;
+  color: #d1d1d1;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.work-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.work-card {
+  width: 300px;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: max-height 1s ease, transform 0.4s ease;
+}
+
+.work-card:hover {
+  max-height: 1000px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 16px;
+}
+
+.work-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.company-name {
+  margin-top: 1rem;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.card-description {
+  padding: 16px;
+  color: white;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.work-card:hover .card-description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .card-description {
+    transform: translateY(100%);
+  }
+
+  .work-card:hover .card-description {
+    transform: translateY(0);
+  }
+}
