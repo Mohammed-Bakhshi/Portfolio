@@ -1,72 +1,198 @@
+@property --skill-trail-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.skills-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--section-gap) 20px 0;
+}
+
+.skills-title {
+  position: relative;
+}
+
+.skills-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 12px auto 0;
+  border-radius: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: title-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scaleX(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+}
+
 .skill-row {
   display: flex;
-  position: relative;
-  justify-content: space-between;
+  align-items: stretch;
   gap: 40px;
-  max-width: 800px;
-  margin: 40px auto 0;
 }
 
 .skill-panel {
-  position: relative;
-  padding: 50px;
+  flex: 1;
   border-radius: 12px;
   color: #c9d1d9;
-  background-color: #21262d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform-origin: left;
-  animation: drawBox 1s ease-in-out;
-  animation-delay: 0.5s;
 }
 
-.skill-panel ul {
-  line-height: 1.8;
+.skill-panel-animated {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-panel-animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--skill-trail-angle),
+    transparent 0deg 285deg,
+    rgba(20, 184, 166, 0.4) 300deg,
+    rgba(45, 212, 191, 0.85) 320deg,
+    rgba(94, 234, 212, 0.95) 330deg,
+    rgba(45, 212, 191, 0.85) 340deg,
+    rgba(20, 184, 166, 0.4) 355deg,
+    transparent 360deg
+  );
+  pointer-events: none;
+  animation: skill-trail-rotate 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.skill-panel-animated::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+  border-radius: 10px;
+  background: var(--surface-raised);
+  pointer-events: none;
+}
+
+.skill-row .skill-panel-animated:nth-child(2)::before {
+  animation-delay: -2s;
+}
+
+@keyframes skill-trail-rotate {
+  to {
+    --skill-trail-angle: 360deg;
+  }
+}
+
+.skill-panel-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 36px;
+}
+
+.skill-panel h3 {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group h4 {
+  margin: 0 0 10px;
+  color: #8b949e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page[data-theme="light"] .skill-group h4 {
+  color: #656d76;
+}
+
+.page[data-theme="light"] .skill-panel-animated::after {
+  background: #ffffff;
+}
+
+.skill-list {
+  margin: 0;
+  padding: 0;
+  line-height: 1.85;
+  list-style: none;
   text-align: left;
+}
+
+.skill-list li {
+  position: relative;
+  padding: 5px 0 5px 14px;
+  color: inherit;
+}
+
+.skill-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .page[data-theme="light"] .skill-panel {
   color: #1f2328;
-  background: #ffffff;
 }
 
-.hacker-line,
-.scrolling-text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: linear-gradient(180deg, #58a6ff, transparent);
-  animation: pulseLine 2s infinite;
-}
+@media (prefers-reduced-motion: reduce) {
+  .skill-panel-animated::before,
+  .skills-title::after {
+    animation: none;
+  }
 
-.hacker-line {
-  left: -15px;
-}
-
-.scrolling-text {
-  right: -15px;
-  background: linear-gradient(180deg, transparent, #58a6ff);
-  animation: scrollingText 5s linear infinite;
-}
-
-@keyframes drawBox {
-  0% { transform: scaleX(0); opacity: 0; }
-  50% { transform: scaleX(1); opacity: 0.5; }
-  100% { transform: scaleX(1); opacity: 1; }
-}
-
-@keyframes pulseLine {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 1; }
-}
-
-@keyframes scrollingText {
-  0% { transform: translateY(-30%); }
-  100% { transform: translateY(30%); }
+  .skill-panel-animated::before {
+    opacity: 0.35;
+  }
 }
 
 @media (max-width: 768px) {
-  .skill-panel {
-    display: none;
+  .skill-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .skill-panel-content {
+    padding: 28px;
   }
 }

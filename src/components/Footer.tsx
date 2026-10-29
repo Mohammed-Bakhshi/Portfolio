@@ -3,25 +3,22 @@ import "./Footer.css";
 
 export function Footer() {
   return (
-    <div className="footer">
-      <div className="tech-info">
-        <span>Developed with React.js</span>
-        <span>Hosted on AWS</span>
-        <span>Powered by Node.js & Nginx</span>
-      </div>
+    <footer className="footer">
       <div className="social-row">
         {socials.map((link) => (
           <a
             key={link.label}
+            className="social-link"
             href={link.href}
             target={link.label === "Email" ? undefined : "_blank"}
             rel="noopener noreferrer"
+            aria-label={link.label}
           >
-            <img src={link.icon} alt={link.label} />
+            <img src={link.icon} alt="" />
           </a>
         ))}
       </div>
-      <div className="footer-text">Thanks for checking out my portfolio 👋</div>
-    </div>
+      <p className="footer-text">Thanks for checking out my portfolio 👋</p>
+    </footer>
   );
 }

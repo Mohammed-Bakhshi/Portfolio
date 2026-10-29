@@ -1,37 +1,36 @@
-import renuemLogo from "../assets/renuem.png";
+import thinknLogo from "../assets/renuem.png";
 import clearear from "../assets/clearear.jpg";
 import mosGames from "../assets/mos-games.png";
 
 export const jobs = [
   {
-    title: "🌍 Renuem",
-    icon: renuemLogo,
-    summary: "Renewable energy investment platform.",
+    title: "Thinkn",
+    icon: thinknLogo,
+    summary: "National carbon registry software.",
     points: [
-      "Developed a renewable energy investment app using React Native (Expo) and Node.js with Express.js, enabling individuals to invest in wind farms and solar panels through a scalable and secure platform.",
-      "Deployed the backend on AWS, integrating MySQL RDS for efficient data management and real-time investment tracking.",
-      "Collaborated with stakeholders to align the app with business goals, driving user engagement and satisfaction.",
+      "Shipped Togo's carbon registry with a team of two: I led the frontend and certificate flows; my teammate led backend and blockchain. Later we worked across both.",
+      "Contributed to Zimbabwe registry work, including blockchain-related features, in TypeScript, React, Next.js, NestJS, GraphQL, PostgreSQL, and AWS.",
+      "Built landing pages for new business brands as the company evolved, and shipped UI and API features including French localisation, certificate PDFs, and credit ranges.",
     ],
   },
   {
-    title: "💼 Clear Ear",
+    title: "Clear Ear",
     icon: clearear,
-    summary: "Hearing clinic appointment management app.",
+    summary: "Hearing clinic appointment app.",
     points: [
-      "Designed and developed an Android app using React Native to manage patient appointments and streamline operations for a hearing clinic.",
-      "Integrated a local database with AsyncStorage to store and track customer details and appointment history.",
-      "Worked closely with clinic staff to gather requirements and ensure the app met operational needs and improved workflow efficiency.",
+      "Built a React Native Android app so a hearing clinic can manage patient appointments.",
+      "Stored customer details and appointment history on the device with AsyncStorage.",
+      "Took the workflow from clinic staff and shaped the app around how the clinic runs day to day.",
     ],
   },
   {
-    title: "🎮 Mo’s Pvt",
+    title: "Mo’s Games",
     icon: mosGames,
-    summary: "Gamimg lounge",
+    summary: "Gaming lounge website, ordering, and data-led pricing.",
     points: [
-      "Conducted data analysis for the launch of bubble tea, identifying key demographics and customer segments for targeted marketing.",
-      "Analyzed market trends to assess the possibility of expanding into new locations for bubble tea and nitrogen ice cream shops.",
-      "Developed and maintained the Mo’s Games website using HTML, CSS, and JavaScript, improving customer engagement and online presence.",
-      "Utilized data insights to optimize marketing strategies, driving successful product launches and business growth.",
+      "Built and maintained the Mo's Games website in HTML, CSS, and JavaScript.",
+      "Built a bubble tea pickup ordering flow so customers could order ahead and collect in store.",
+      "Used competitor gaming lounge data to benchmark pricing and guide how we priced sessions and retail.",
     ],
   },
 ];

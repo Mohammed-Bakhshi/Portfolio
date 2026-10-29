@@ -2,12 +2,12 @@ import mohammed from "../assets/mohammed.png";
 
 export const portrait = {
   src: mohammed,
-  caption: "Mohammed Bakhshi - Full Stack Developer 🇬🇧",
+  caption: "Mohammed Bakhshi - Developer 🇬🇧",
 };
 
 export const aboutParagraphs = [
-  "With 4 years of experience as a Full Stack Developer and Data Analyst born and raised in the uk , I’ve built my career around designing efficient, user-focused solutions that bridge technical innovation with real-world impact.",
-  "I’ve also been fortunate to combine my technical skills with entrepreneurial insight. For instance, I played a key role in launching innovative ventures, such as bringing the first bubble tea gaming lounge to the market.",
-  "Outside of work, I’m always exploring the latest in technology, tackling coding challenges, and pursuing hobbies like gaming, photography, and solving puzzles.",
-  "I am looking for my next opportunity, please get in touch if you need a passionate and versatile developer",
+  "Developer born and raised in the UK, with four years' experience. I build web applications from the interface through to the API — and I care that what I ship is usable, not just technically correct.",
+  "I'm at my best in small teams with real ownership: take something from a rough idea, build it, and keep improving it once it's live. Side projects and learning new tools are how I stay sharp.",
+  "Based in the UK and open to remote roles at home or abroad.",
+  "Outside work I run local LLMs through a web UI, use Cursor and Claude CLI day to day, and enjoy LeetCode, gaming, and photography.",
 ];

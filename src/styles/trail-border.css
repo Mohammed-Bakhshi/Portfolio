@@ -1,0 +1,99 @@
+@property --trail-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.trail-border {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: none;
+}
+
+.trail-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--trail-angle),
+    transparent 0deg,
+    transparent 250deg,
+    var(--accent-dark) 285deg,
+    var(--accent) 305deg,
+    var(--accent-hover) 325deg,
+    transparent 360deg
+  );
+  pointer-events: none;
+  animation: trail-rotate 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.trail-border::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+  border-radius: inherit;
+  background: var(--surface-raised);
+  pointer-events: none;
+}
+
+.trail-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-row .trail-border:nth-child(2)::before {
+  animation-delay: -2s;
+}
+
+.trail-border-hover::before {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.trail-border-hover:hover::before {
+  opacity: 1;
+}
+
+@keyframes trail-rotate {
+  to {
+    --trail-angle: 360deg;
+  }
+}
+
+.page[data-theme="light"] .trail-border::after {
+  background: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-border::before {
+    animation: none;
+    opacity: 0.35;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      transparent
+    );
+  }
+
+  .trail-border-hover::before {
+    opacity: 0.2;
+  }
+
+  .trail-border-hover:hover::before {
+    opacity: 0.35;
+  }
+}
