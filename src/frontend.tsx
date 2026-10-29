@@ -8,6 +8,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App.tsx";
+import "./styles/tokens.css";
+import "./styles/trail-border.css";
 import "./styles/base.css";
 
 const elem = document.getElementById("root")!;

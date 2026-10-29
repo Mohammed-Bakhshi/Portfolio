@@ -1,14 +1,20 @@
 .page {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 20px;
+  padding: calc(var(--nav-height) + var(--section-gap)) 20px 20px;
   overflow-x: hidden;
   color: #c9d1d9;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(135deg, #0d1117, #21262d);
+  background: linear-gradient(160deg, var(--surface-deep) 0%, var(--surface-mid) 45%, #0d1520 100%);
 }
 
 .page[data-theme="light"] {
   color: #1f2328;
-  background: linear-gradient(135deg, #f6f8fa, #eaeef2);
+  background: linear-gradient(160deg, #f6f8fa 0%, #eef2f6 50%, #e8edf2 100%);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: calc(var(--nav-height) + var(--section-gap));
+  }
 }

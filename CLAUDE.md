@@ -107,16 +107,42 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 
 ## Commits
 
-When the change sits in one folder, use the folder path and leave the file name out:
+Use this format for every commit:
 
 ```
-chore(src/components): shorten the hero heading
+chore(<folder scope>): "<commit message>"
 ```
 
-That example is for a change in `src/components/Hero.tsx`.
+**Scope rules**
 
-When the change touches many files or more than one path, skip the `chore(...)` part and write only the message:
+- Use **folder paths only** — never include file names (e.g. `Hero.tsx`).
+- One folder touched → that path: `chore(src/components): "…"`.
+- Several files in the **same** folder → still that one folder (not each file).
+- Files in **different** folders → list each folder, comma-separated: `chore(src/components, src/content): "…"`.
+- Do **not** climb to a vague parent if the changed folders differ; list the actual folders (or their nearest shared parent only when every changed file lives under that one path).
+
+**Examples**
+
+Change only `src/components/Hero.tsx`:
 
 ```
-split styles next to each section
+chore(src/components): "shorten the hero heading"
+```
+
+Change `src/components/Hero.tsx` and `src/components/About.tsx`:
+
+```
+chore(src/components): "align section headings"
+```
+
+Change `src/components/Hero.tsx` and `src/content/about.ts`:
+
+```
+chore(src/components, src/content): "refresh hero and about copy"
+```
+
+Change `README.md` at repo root:
+
+```
+chore(.): "document setup and stack"
 ```

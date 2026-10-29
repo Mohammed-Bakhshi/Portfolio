@@ -9,7 +9,7 @@ const icons = {
 
 export function Projects() {
   return (
-    <div className="project-container" id="projects">
+    <div className="project-container section-reveal" id="projects">
       <h1 className="projects-header">Additional Projects</h1>
       <div className="projects-grid">
         {projects.map((project) => (

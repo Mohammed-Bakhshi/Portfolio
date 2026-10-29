@@ -1,39 +1,53 @@
-import javascriptLogo from "../assets/javascript.png";
-import reactLogo from "../assets/react.png";
-import nodeLogo from "../assets/node.png";
-import pythonLogo from "../assets/python.png";
-import sqlLogo from "../assets/sql.png";
-import restLogo from "../assets/rest.png";
-import seleniumLogo from "../assets/selenium.png";
-import kotlinLogo from "../assets/kotlin.png";
+export const skillGroups = [
+  {
+    title: "Frontend",
+    items: ["TypeScript", "React", "Next.js"],
+  },
+  {
+    title: "Backend",
+    items: ["Node.js", "REST APIs", "GraphQL"],
+  },
+  {
+    title: "Data",
+    items: ["PostgreSQL", "SQL", "Python"],
+  },
+  {
+    title: "Platforms",
+    items: ["React Native", "AWS", "Linux"],
+  },
+] as const;
 
-export const skills = [
-  "JavaScript",
-  "React.js",
-  "Node.js",
-  "RESTful APIs",
-  "SQL",
-  "Python",
-  "AWS",
-];
-
-export const interests = [
-  "Development",
-  "Leetcode",
-  "Business",
-  "Competitive gaming",
-  "Music",
-  "Photography",
-  "Foreign TV",
-];
-
-export const techLogos = [
-  { name: "Javascript", src: javascriptLogo },
-  { name: "React.js", src: reactLogo },
-  { name: "Node.js", src: nodeLogo },
-  { name: "Python", src: pythonLogo },
-  { name: "SQL", src: sqlLogo },
-  { name: "RESTful APIs", src: restLogo },
-  { name: "Selenium", src: seleniumLogo },
-  { name: "Kotlin", src: kotlinLogo },
-];
+export const softSkillGroups = [
+  {
+    title: "Work style",
+    items: [
+      "End-to-end ownership",
+      "Fast in small teams",
+      "Side projects outside work",
+    ],
+  },
+  {
+    title: "Teamwork",
+    items: [
+      "Lead one area, help elsewhere",
+      "Constructive code review",
+      "Remote across time zones",
+    ],
+  },
+  {
+    title: "Problem solving",
+    items: [
+      "Simplify real workflows",
+      "Data-informed decisions",
+      "Clarify before coding",
+    ],
+  },
+  {
+    title: "Communication",
+    items: [
+      "Plain-language explanations",
+      "Design around how people work",
+      "English native, French OK",
+    ],
+  },
+] as const;
