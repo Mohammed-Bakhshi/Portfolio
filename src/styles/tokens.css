@@ -1,0 +1,12 @@
+:root {
+  --accent: #2dd4bf;
+  --accent-dark: #14b8a6;
+  --accent-hover: #5eead4;
+  --accent-muted: rgba(45, 212, 191, 0.15);
+  --surface-deep: #060a10;
+  --surface-mid: #0f1724;
+  --surface-raised: #151d2b;
+  --text-muted: #8b949e;
+  --nav-height: 64px;
+  --section-gap: 48px;
+}

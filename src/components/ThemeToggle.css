@@ -1,0 +1,19 @@
+.theme-switch {
+  margin: 0;
+}
+
+.theme-switch .MuiSwitch-switchBase {
+  color: #8b949e;
+}
+
+.theme-switch .MuiSwitch-switchBase.Mui-checked {
+  color: var(--accent);
+}
+
+.theme-switch .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: rgba(45, 212, 191, 0.35);
+}
+
+.theme-switch .MuiSwitch-track {
+  background-color: rgba(139, 148, 158, 0.4);
+}
