@@ -1,37 +1,67 @@
-# Digital Portfolio  
+# Mohammed Bakhshi — Portfolio
 
-Welcome to my **Digital Portfolio**! This project showcases my technical skills, hobbies, and passion for technology, highlighting my expertise as a **Full Stack Developer**.  
+Personal portfolio site: a single-page React app served with [Bun](https://bun.com). It showcases experience, skills, and projects for recruiters and hiring managers.
 
-## About the Project  
+**Author:** [Mohammed Bakhshi](https://github.com/Mohammed-Bakhshi) · [LinkedIn](https://www.linkedin.com/in/mohammed-bakhshi/) · [CV (PDF)](https://react--portfolio.s3.eu-west-2.amazonaws.com/Mohammed+Bakhshi+CV.pdf)
 
-I created this portfolio to provide an engaging and interactive way to share my journey in technology. Built with modern tools and a strong focus on **UI/UX**, this application demonstrates my capabilities in both **front-end** and **back-end** development.  
+## Tech stack
 
-### Key Features  
+| Layer | Choice |
+| --- | --- |
+| Runtime & dev server | Bun (`Bun.serve`, HMR) |
+| UI | React 19, TypeScript (strict) |
+| Components | MUI icons where needed; section styling in co-located CSS |
+| Build | `bun build` → static assets in `dist/` |
 
-- **Built with React.js**  
-  A fast and dynamic front-end framework for building user interfaces.  
+## Features
 
-- **Hosted on AWS EC2**  
-  Ensures reliability, scalability, and speed for seamless performance.  
+- **Content-driven sections** — copy and links live under `src/content/`, not buried in JSX.
+- **Light / dark theme** — persisted in `localStorage` via `useColorMode`.
+- **Scroll-driven UX** — active nav section, reveal animations, and scroll helpers in `src/hooks/`.
+- **Design tokens** — shared colours and typography in `src/styles/tokens.css` and `base.css`.
 
-- **Custom Domain with SSL**  
-  The app is secured with an SSL certificate, providing users with a secure browsing experience.  
+## Project structure
 
-- **Nginx and Node.js Deployment**  
-  Efficiently deployed using Nginx as a reverse proxy and Node.js to serve the app.  
+```
+src/
+├── components/     # UI sections (Hero, About, WorkHistory, Skills, Projects, …)
+├── content/        # Data: about, jobs, skills, projects, links
+├── hooks/          # Theme, scroll, and section behaviour
+├── pages/          # HomePage composition
+├── styles/         # Global tokens and base styles
+├── assets/         # Images and icons
+├── index.ts        # Bun server (dev + production)
+├── index.html      # Entry HTML
+└── frontend.tsx    # React bootstrap
+```
 
-- **Modern and Animated Design**  
-  Sleek, smooth animations and transitions enhance the user experience, making the app visually appealing and engaging.  
+Path alias `@/*` → `./src/*` is configured in `tsconfig.json` for optional use.
 
-## Development Process  
+## Prerequisites
 
-1. Designed and developed the portfolio using **React.js**.  
-2. Deployed the app on an **AWS EC2 server** for robust hosting.  
-3. Acquired a **custom domain** and redirected the EC2 server URL to the domain.  
-4. Secured the app with an **SSL certificate** for HTTPS support.  
-5. Configured **Nginx** as a reverse proxy and used **Node.js** to deploy the application.  
-6. Integrated animations to achieve a smooth, modern, and professional look, showcasing my attention to design and functionality.  
+- [Bun](https://bun.com) (v1.3+ recommended)
 
-## Purpose  
+## Scripts
 
-This portfolio not only demonstrates my technical abilities but also highlights my dedication to creating user-friendly, secure, and well-optimized applications. It serves as a testament to my expertise in full-stack development and my passion for technology.  
+```bash
+bun install          # install dependencies
+bun dev              # dev server with HMR (port 3000)
+bun run build        # production bundle to dist/
+bun start            # serve in production mode
+```
+
+After `bun run build`, deploy the contents of `dist/` to any static host (S3, CloudFront, Netlify, etc.).
+
+## Local development
+
+1. Clone the repository.
+2. Run `bun install` then `bun dev`.
+3. Open `http://localhost:3000`.
+
+## TypeScript
+
+The project uses strict compiler options (`strict`, `noUncheckedIndexedAccess`, `verbatimModuleSyntax`, etc.). See `tsconfig.json`.
+
+## License
+
+Private — all rights reserved unless stated otherwise in the repository settings.

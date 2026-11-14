@@ -1,0 +1,98 @@
+.work-history {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--section-gap) 20px 0;
+  text-align: center;
+}
+
+.work-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.work-card {
+  width: min(420px, 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  box-shadow: 0 10px 32px rgba(45, 212, 191, 0.18);
+  transform: translateY(-4px);
+}
+
+.work-cards .trail-border:nth-child(2)::before {
+  animation-delay: -1.3s;
+}
+
+.work-cards .trail-border:nth-child(3)::before {
+  animation-delay: -2.6s;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 20px 16px 0;
+}
+
+.work-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.work-card:hover .work-icon {
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.35);
+}
+
+.company-name {
+  margin: 0;
+  color: #e6edf3;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card-description {
+  padding: 0 24px 24px;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.card-description p {
+  margin: 0 0 1rem;
+}
+
+.card-description ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.card-description li {
+  margin: 0 0 0.85rem;
+}
+
+.card-description li:last-child {
+  margin-bottom: 0;
+}
+
+.page[data-theme="light"] .company-name {
+  color: #1f2328;
+}
+
+.page[data-theme="light"] .card-description {
+  color: #1f2328;
+}
