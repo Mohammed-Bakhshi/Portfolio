@@ -35,7 +35,7 @@ export function ThemeToggle({ mode, onToggle }: ThemeToggleProps) {
         onChange={onToggle}
         icon={<LightModeOutlinedIcon fontSize="small" />}
         checkedIcon={<DarkModeOutlinedIcon fontSize="small" />}
-        inputProps={{ "aria-label": "Toggle colour mode" }}
+        slotProps={{ input: { "aria-label": "Toggle colour mode" } }}
       />
     </ThemeProvider>
   );
