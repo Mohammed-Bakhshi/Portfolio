@@ -1,4 +1,4 @@
-import thinknLogo from "../assets/renuem.png";
+import thinknLogo from "../assets/thinkn.webp";
 import clearear from "../assets/clearear.jpg";
 import mosGames from "../assets/mos-games.png";
 
