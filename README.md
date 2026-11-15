@@ -1,67 +1,44 @@
 # Mohammed Bakhshi — Portfolio
 
-Personal portfolio site: a single-page React app served with [Bun](https://bun.com). It showcases experience, skills, and projects for recruiters and hiring managers.
+This is my personal site. It is a single-page React app, served with [Bun](https://bun.com), and it walks through my experience, skills, and projects.
 
-**Author:** [Mohammed Bakhshi](https://github.com/Mohammed-Bakhshi) · [LinkedIn](https://www.linkedin.com/in/mohammed-bakhshi/) · [CV (PDF)](https://react--portfolio.s3.eu-west-2.amazonaws.com/Mohammed+Bakhshi+CV.pdf)
+**Mohammed Bakhshi** · [GitHub](https://github.com/Mohammed-Bakhshi) · [LinkedIn](https://www.linkedin.com/in/mohammed-bakhshi/) · [CV (PDF)](https://react--portfolio.s3.eu-west-2.amazonaws.com/Mohammed+Bakhshi+CV.pdf)
 
-## Tech stack
+## What it is built with
 
-| Layer | Choice |
-| --- | --- |
-| Runtime & dev server | Bun (`Bun.serve`, HMR) |
-| UI | React 19, TypeScript (strict) |
-| Components | MUI icons where needed; section styling in co-located CSS |
-| Build | `bun build` → static assets in `dist/` |
+- **Bun** runs the dev server (with hot reload) and the production build.
+- **React 19** and **TypeScript**, with strict compiler settings.
+- **MUI** `Box` and `Stack` for layout. Styles live in TypeScript `const` objects, next to each component.
+- `bun build` writes the static files into `dist/`.
 
-## Features
+## How the code is organised
 
-- **Content-driven sections** — copy and links live under `src/content/`, not buried in JSX.
-- **Light / dark theme** — persisted in `localStorage` via `useColorMode`.
-- **Scroll-driven UX** — active nav section, reveal animations, and scroll helpers in `src/hooks/`.
-- **Design tokens** — shared colours and typography in `src/styles/tokens.css` and `base.css`.
-
-## Project structure
+Copy and links sit in `src/content/` as `*.content.ts` files. The light and dark theme is saved in `localStorage` by `useColorMode`. Scroll behaviour (the active nav item, reveal animations, and related helpers) lives in `src/hooks/`. Shared colours and motion live in `src/styles/tokens.ts` and `global.ts`.
 
 ```
 src/
-├── components/     # UI sections (Hero, About, WorkHistory, Skills, Projects, …)
-├── content/        # Data: about, jobs, skills, projects, links
+├── components/     # One folder per component (index.tsx + styles.ts)
+├── content/        # *.content.ts data, re-exported from index.ts
 ├── hooks/          # Theme, scroll, and section behaviour
-├── pages/          # HomePage composition
-├── styles/         # Global tokens and base styles
+├── sections/       # Page composition (Home)
+├── styles/         # Global tokens and motion
 ├── assets/         # Images and icons
-├── index.ts        # Bun server (dev + production)
+├── index.ts        # Bun server (dev and production)
 ├── index.html      # Entry HTML
 └── frontend.tsx    # React bootstrap
 ```
 
-Path alias `@/*` → `./src/*` is configured in `tsconfig.json` for optional use.
+`@/*` maps to `./src/*` in `tsconfig.json`. TypeScript is strict (`strict`, `noUncheckedIndexedAccess`, `verbatimModuleSyntax`). The full options are in `tsconfig.json`.
 
-## Prerequisites
+## Running it locally
 
-- [Bun](https://bun.com) (v1.3+ recommended)
-
-## Scripts
+You need [Bun](https://bun.com) (v1.3 or newer is a good bet).
 
 ```bash
-bun install          # install dependencies
-bun dev              # dev server with HMR (port 3000)
-bun run build        # production bundle to dist/
-bun start            # serve in production mode
+bun install
+bun dev              # http://localhost:3000, with hot reload
+bun run build        # writes the production bundle to dist/
+bun start            # serves the production build
 ```
 
-After `bun run build`, deploy the contents of `dist/` to any static host (S3, CloudFront, Netlify, etc.).
-
-## Local development
-
-1. Clone the repository.
-2. Run `bun install` then `bun dev`.
-3. Open `http://localhost:3000`.
-
-## TypeScript
-
-The project uses strict compiler options (`strict`, `noUncheckedIndexedAccess`, `verbatimModuleSyntax`, etc.). See `tsconfig.json`.
-
-## License
-
-Private — all rights reserved unless stated otherwise in the repository settings.
+Clone the repo, run `bun install`, then `bun dev`, and open `http://localhost:3000`. After `bun run build`, the `dist/` folder is what you deploy (S3, CloudFront, Netlify, or any other static host).
