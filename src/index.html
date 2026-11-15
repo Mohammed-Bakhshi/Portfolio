@@ -13,6 +13,15 @@
     <title>Mohammed Bakhshi</title>
   </head>
   <body>
+    <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      scrollTo(0, 0);
+    </script>
     <div id="root"></div>
     <script type="module" src="./frontend.tsx"></script>
   </body>

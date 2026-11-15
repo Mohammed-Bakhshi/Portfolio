@@ -1,9 +1,26 @@
-import { HomePage } from "./pages/HomePage.tsx";
-import { useColorMode } from "./hooks/useColorMode.ts";
+import React, { type FC, useMemo } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import { ThemeProvider } from '@mui/material/styles';
+import { Home } from '@/sections';
+import { useColorMode } from '@/hooks/useColorMode';
+import { useStartAtTop } from '@/hooks/useStartAtTop';
+import { globalStyles, registeredAngles } from '@/styles/global';
+import { createAppTheme } from '@/theme';
 
-export function App() {
+const App: FC = () => {
+  useStartAtTop();
   const { mode, toggle } = useColorMode();
-  return <HomePage mode={mode} onToggle={toggle} />;
-}
+  const theme = useMemo(() => createAppTheme(mode), [mode]);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <style>{registeredAngles}</style>
+      <GlobalStyles styles={globalStyles} />
+      <Home onToggle={toggle} />
+    </ThemeProvider>
+  );
+};
 
 export default App;

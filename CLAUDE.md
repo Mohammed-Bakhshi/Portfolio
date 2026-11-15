@@ -123,19 +123,19 @@ chore(<folder scope>): "<commit message>"
 
 **Examples**
 
-Change only `src/components/Hero.tsx`:
+Change only `src/components/Hero/index.tsx`:
 
 ```
 chore(src/components): "shorten the hero heading"
 ```
 
-Change `src/components/Hero.tsx` and `src/components/About.tsx`:
+Change `src/components/Hero/index.tsx` and `src/components/About/index.tsx`:
 
 ```
 chore(src/components): "align section headings"
 ```
 
-Change `src/components/Hero.tsx` and `src/content/about.ts`:
+Change `src/components/Hero/index.tsx` and `src/content/about.content.ts`:
 
 ```
 chore(src/components, src/content): "refresh hero and about copy"
